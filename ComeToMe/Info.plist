@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location is used to send to vehicle.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>Location is used to send to vehicle.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

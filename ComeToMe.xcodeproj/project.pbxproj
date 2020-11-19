@@ -14,6 +14,7 @@
 		EDF857C72565690600A5117E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF857C62565690600A5117E /* Preview Assets.xcassets */; };
 		EDF857CA2565690600A5117E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF857C82565690600A5117E /* LaunchScreen.storyboard */; };
 		EDF857D52565690600A5117E /* ComeToMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF857D42565690600A5117E /* ComeToMeTests.swift */; };
+		EDF857E025656C7700A5117E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF857DF25656C7700A5117E /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EDF857D02565690600A5117E /* ComeToMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComeToMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF857D42565690600A5117E /* ComeToMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComeToMeTests.swift; sourceTree = "<group>"; };
 		EDF857D62565690600A5117E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF857DF25656C7700A5117E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				EDF857BD2565690500A5117E /* AppDelegate.swift */,
 				EDF857BF2565690500A5117E /* SceneDelegate.swift */,
 				EDF857C12565690500A5117E /* ContentView.swift */,
+				EDF857DF25656C7700A5117E /* MapView.swift */,
 				EDF857C32565690600A5117E /* Assets.xcassets */,
 				EDF857C82565690600A5117E /* LaunchScreen.storyboard */,
 				EDF857CB2565690600A5117E /* Info.plist */,
@@ -152,7 +155,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Justin.Dombecki;
 				TargetAttributes = {
 					EDF857B92565690500A5117E = {
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDF857BE2565690500A5117E /* AppDelegate.swift in Sources */,
+				EDF857E025656C7700A5117E /* MapView.swift in Sources */,
 				EDF857C02565690500A5117E /* SceneDelegate.swift in Sources */,
 				EDF857C22565690500A5117E /* ContentView.swift in Sources */,
 			);
@@ -270,6 +274,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -294,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,6 +335,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -348,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
