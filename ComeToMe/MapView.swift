@@ -17,12 +17,17 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        mapView.setCameraZoomRange(MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 1000), animated: true)
+        mapView.showsUserLocation = true
+        mapView.showsScale = true
+        mapView.showsBuildings = true
+        print(mapView.userLocation)
+        mapView.setCameraZoomRange(MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200), animated: true)
         return mapView
     }
 
     func updateUIView(_ view: MKMapView, context: Context) {
         view.centerCoordinate = centerCoordinate
+        print(view.userLocation.coordinate)
     }
 
     func makeCoordinator() -> Coordinator {
@@ -56,6 +61,7 @@ struct MapView: UIViewRepresentable {
                     latitude: location.coordinate.latitude + result.latitude / 2.0,
                     longitude: location.coordinate.longitude + result.longitude / 2.0)
             }))
+            locationManager.requestLocation()
         }
         
         func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
@@ -77,7 +83,8 @@ struct MapView: UIViewRepresentable {
                 map.isLocationPermissionSettingsAppLinkPresented = false
                 guard let knownLocation = manager.location else { throw LocationsErrors.LocationNotUsable }
 
-                updateCoordinate(knownLocation.coordinate); break
+                updateCoordinate(knownLocation.coordinate)
+                locationManager.requestLocation(); break
                 
             case .notDetermined:
                 locationManager.requestLocation()

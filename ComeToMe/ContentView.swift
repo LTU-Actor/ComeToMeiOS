@@ -12,6 +12,8 @@ import MapKit
 struct ContentView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var isLocationPermissionSettingsAppLinkPresented = false
+    @State private var isNetworkErrorPresented = false
+    @State private var networkStatus: NetworkStatus?
     
     var body: some View {
         ZStack {
@@ -24,7 +26,12 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Button(action: {
-                        // call service
+                        Network.tryToSendCoordinate(centerCoordinate) { networkResult in
+                            if !networkResult.success {
+                                networkStatus = networkResult
+                                isNetworkErrorPresented = true
+                            }
+                        }
                     }) {
                         Text("Come to Me")
                     }
@@ -46,6 +53,11 @@ struct ContentView: View {
                         UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
                     }
                   }), secondaryButton: .cancel())
+        })
+        .alert(isPresented: $isNetworkErrorPresented, content: {
+            Alert(title: Text("Network Error"),
+                  message: Text("\(networkStatus?.error?.localizedDescription ?? "No message.")"),
+                  dismissButton: .cancel())
         })
     }
 }

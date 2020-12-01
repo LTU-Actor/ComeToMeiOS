@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDB6BDD62566FF54005B0D97 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6BDD52566FF54005B0D97 /* Network.swift */; };
 		EDF857BE2565690500A5117E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF857BD2565690500A5117E /* AppDelegate.swift */; };
 		EDF857C02565690500A5117E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF857BF2565690500A5117E /* SceneDelegate.swift */; };
 		EDF857C22565690500A5117E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF857C12565690500A5117E /* ContentView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EDB6BDD52566FF54005B0D97 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		EDF857BA2565690500A5117E /* ComeToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComeToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF857BD2565690500A5117E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF857BF2565690500A5117E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				EDF857BF2565690500A5117E /* SceneDelegate.swift */,
 				EDF857C12565690500A5117E /* ContentView.swift */,
 				EDF857DF25656C7700A5117E /* MapView.swift */,
+				EDB6BDD52566FF54005B0D97 /* Network.swift */,
 				EDF857C32565690600A5117E /* Assets.xcassets */,
 				EDF857C82565690600A5117E /* LaunchScreen.storyboard */,
 				EDF857CB2565690600A5117E /* Info.plist */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB6BDD62566FF54005B0D97 /* Network.swift in Sources */,
 				EDF857BE2565690500A5117E /* AppDelegate.swift in Sources */,
 				EDF857E025656C7700A5117E /* MapView.swift in Sources */,
 				EDF857C02565690500A5117E /* SceneDelegate.swift in Sources */,
