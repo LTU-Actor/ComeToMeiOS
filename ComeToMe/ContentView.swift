@@ -11,8 +11,11 @@ import MapKit
 
 struct ContentView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
+
     @State private var isLocationPermissionSettingsAppLinkPresented = false
     @State private var isNetworkErrorPresented = false
+    @State private var isLocationSentPresented = false
+
     @State private var networkStatus: NetworkStatus?
     
     var body: some View {
@@ -27,7 +30,10 @@ struct ContentView: View {
                 HStack {
                     Button(action: {
                         Network.tryToSendCoordinate(centerCoordinate) { networkResult in
-                            if !networkResult.success {
+                            if networkResult.success {
+                                networkStatus = networkResult
+                                isLocationSentPresented = true
+                            } else {
                                 networkStatus = networkResult
                                 isNetworkErrorPresented = true
                             }
@@ -58,6 +64,11 @@ struct ContentView: View {
             Alert(title: Text("Network Error"),
                   message: Text("\(networkStatus?.error?.localizedDescription ?? "No message.")"),
                   dismissButton: .cancel())
+        })
+        .alert(isPresented: $isLocationSentPresented, content: {
+            Alert(title: Text("Location Sent!"),
+                  message: Text("\(centerCoordinate.latitude), \(centerCoordinate.longitude)"),
+                  dismissButton: .default(Text("Okay")))
         })
     }
 }
