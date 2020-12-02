@@ -11,8 +11,11 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     
-    @Binding var centerCoordinate: CLLocationCoordinate2D
+    @Binding var centerCoord: CLLocationCoordinate2D
+    @Binding var locationCoordinate: CLLocationCoordinate2D
     @Binding var isLocationPermissionSettingsAppLinkPresented: Bool
+    @Binding var isLocationFollowingEnabled: Bool
+    @Binding var isFirstTimeShowingMap: Bool
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -20,14 +23,20 @@ struct MapView: UIViewRepresentable {
         mapView.showsUserLocation = true
         mapView.showsScale = true
         mapView.showsBuildings = true
-        print(mapView.userLocation)
-        mapView.setCameraZoomRange(MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200), animated: true)
+        print(mapView.userLocation.coordinate)
+        mapView.setCameraZoomRange(MKMapView.CameraZoomRange(minCenterCoordinateDistance: 100,
+                                                             maxCenterCoordinateDistance: 600), animated: true)
         return mapView
     }
 
     func updateUIView(_ view: MKMapView, context: Context) {
-        view.centerCoordinate = centerCoordinate
-        print(view.userLocation.coordinate)
+        if (isLocationFollowingEnabled || isFirstTimeShowingMap) {
+            view.centerCoordinate = locationCoordinate
+            print("setting center: \(view.userLocation.coordinate)")
+        } else {
+            view.centerCoordinate = centerCoord
+        }
+        
     }
 
     func makeCoordinator() -> Coordinator {
@@ -37,7 +46,8 @@ struct MapView: UIViewRepresentable {
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
         var map: MapView
         var locationManager: CLLocationManager
-        
+        var centerCoord: CLLocationCoordinate2D?
+
         init(_ parent: MapView) {
             self.map = parent
             self.locationManager = CLLocationManager()
@@ -45,7 +55,19 @@ struct MapView: UIViewRepresentable {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
         }
+        
+        func updateFirstMapLoadComplete() {
+            guard map.centerCoord.isOrigin() else { return }
+            map.isFirstTimeShowingMap = false
+            map.centerCoord = map.locationCoordinate
+        }
 
+        /// MKMapViewDelegate
+        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+            centerCoord = mapView.centerCoordinate
+        }
+
+        /// CLLocationManagerDelegate
         func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
             tryHandlingLocationPermissions(from: manager)
         }
@@ -64,9 +86,23 @@ struct MapView: UIViewRepresentable {
             locationManager.requestLocation()
         }
         
+        /// Coordinating Coordinates
+        
         func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
-            map.centerCoordinate = coordinate
+            if CLLocationCoordinate2DIsValid(coordinate) {
+                print(coordinate)
+                updateFirstMapLoadComplete()
+                map.locationCoordinate = coordinate
+                updateCenter()
+            }
         }
+        
+        func updateCenter() {
+            guard let centerCoord = centerCoord else { return }
+            map.centerCoord = centerCoord
+        }
+        
+        /// Coordinating Permissions
         
         func tryHandlingLocationPermissions(from manager: CLLocationManager) -> Void  {
             do {
@@ -104,6 +140,14 @@ struct MapView: UIViewRepresentable {
     }
 }
 
+extension CLLocationCoordinate2D {
+    func isOrigin() -> Bool {
+        return self.latitude != 0.0 && self.longitude != 0.0
+    }
+}
+
+/// Preview
+
 extension MKPointAnnotation {
     static var example: MKPointAnnotation {
         let annotation = MKPointAnnotation()
@@ -116,6 +160,10 @@ extension MKPointAnnotation {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate), isLocationPermissionSettingsAppLinkPresented: .constant(false))
+        MapView(centerCoord: .constant(MKPointAnnotation.example.coordinate),
+                locationCoordinate: .constant(MKPointAnnotation.example.coordinate),
+                isLocationPermissionSettingsAppLinkPresented: .constant(false),
+                isLocationFollowingEnabled: .constant(true),
+                isFirstTimeShowingMap: .constant(true))
     }
 }

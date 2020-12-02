@@ -11,6 +11,9 @@ import MapKit
 
 struct ContentView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
+    @State private var locationCoordinate = CLLocationCoordinate2D()
+    @State private var isLocationFollowingEnabled = false
+    @State private var isFirstTimeShowingMap = true
 
     @State private var isLocationPermissionSettingsAppLinkPresented = false
     @State private var isNetworkErrorPresented = false
@@ -20,7 +23,11 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            MapView(centerCoordinate: $centerCoordinate, isLocationPermissionSettingsAppLinkPresented: $isLocationPermissionSettingsAppLinkPresented)
+            MapView(centerCoord: $centerCoordinate,
+                    locationCoordinate: $locationCoordinate,
+                    isLocationPermissionSettingsAppLinkPresented: $isLocationPermissionSettingsAppLinkPresented,
+                    isLocationFollowingEnabled: $isLocationFollowingEnabled,
+                    isFirstTimeShowingMap: $isFirstTimeShowingMap)
                 .edgesIgnoringSafeArea(.all)
             Circle()
                 .fill(Color.blue)
@@ -30,11 +37,10 @@ struct ContentView: View {
                 HStack {
                     Button(action: {
                         Network.tryToSendCoordinate(centerCoordinate) { networkResult in
+                            networkStatus = networkResult
                             if networkResult.success {
-                                networkStatus = networkResult
                                 isLocationSentPresented = true
                             } else {
-                                networkStatus = networkResult
                                 isNetworkErrorPresented = true
                             }
                         }
@@ -44,9 +50,13 @@ struct ContentView: View {
                     .padding()
                     .font(.title)
                     .padding(.trailing)
-                    Spacer()
+                    Toggle("Follow Location", isOn: $isLocationFollowingEnabled)
                 }
                 Spacer()
+                Text("Device Location: \(locationCoordinate.latitude), \(locationCoordinate.longitude)")
+                    .padding(.bottom)
+                Text("Map Center: \(centerCoordinate.latitude), \(centerCoordinate.longitude)")
+                    .padding(.bottom)
             }
         }.alert(isPresented: $isLocationPermissionSettingsAppLinkPresented, content: {
             Alert(title: Text("Location Needed!"),
