@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		EDB6BDD52566FF54005B0D97 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		EDF857BA2565690500A5117E /* ComeToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComeToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF857BA2565690500A5117E /* VSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF857BD2565690500A5117E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF857BF2565690500A5117E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDF857C12565690500A5117E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		EDF857C62565690600A5117E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDF857C92565690600A5117E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF857CB2565690600A5117E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF857D02565690600A5117E /* ComeToMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComeToMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF857D02565690600A5117E /* VehicleSummonSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleSummonSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF857D42565690600A5117E /* ComeToMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComeToMeTests.swift; sourceTree = "<group>"; };
 		EDF857D62565690600A5117E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDF857DF25656C7700A5117E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		EDF857B12565690500A5117E = {
 			isa = PBXGroup;
 			children = (
-				EDF857BC2565690500A5117E /* ComeToMe */,
-				EDF857D32565690600A5117E /* ComeToMeTests */,
+				EDF857BC2565690500A5117E /* VehicleSummonSystem */,
+				EDF857D32565690600A5117E /* VehicleSummonSystem */,
 				EDF857BB2565690500A5117E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,13 +74,13 @@
 		EDF857BB2565690500A5117E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF857BA2565690500A5117E /* ComeToMe.app */,
-				EDF857D02565690600A5117E /* ComeToMeTests.xctest */,
+				EDF857BA2565690500A5117E /* VSS.app */,
+				EDF857D02565690600A5117E /* VehicleSummonSystemTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDF857BC2565690500A5117E /* ComeToMe */ = {
+		EDF857BC2565690500A5117E /* VehicleSummonSystem */ = {
 			isa = PBXGroup;
 			children = (
 				EDF857BD2565690500A5117E /* AppDelegate.swift */,
@@ -93,7 +93,7 @@
 				EDF857CB2565690600A5117E /* Info.plist */,
 				EDF857C52565690600A5117E /* Preview Content */,
 			);
-			path = ComeToMe;
+			path = VehicleSummonSystem;
 			sourceTree = "<group>";
 		};
 		EDF857C52565690600A5117E /* Preview Content */ = {
@@ -104,21 +104,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EDF857D32565690600A5117E /* ComeToMeTests */ = {
+		EDF857D32565690600A5117E /* VehicleSummonSystem */ = {
 			isa = PBXGroup;
 			children = (
 				EDF857D42565690600A5117E /* ComeToMeTests.swift */,
 				EDF857D62565690600A5117E /* Info.plist */,
 			);
-			path = ComeToMeTests;
+			path = VehicleSummonSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDF857B92565690500A5117E /* ComeToMe */ = {
+		EDF857B92565690500A5117E /* VSS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF857D92565690600A5117E /* Build configuration list for PBXNativeTarget "ComeToMe" */;
+			buildConfigurationList = EDF857D92565690600A5117E /* Build configuration list for PBXNativeTarget "VSS" */;
 			buildPhases = (
 				EDF857B62565690500A5117E /* Sources */,
 				EDF857B72565690500A5117E /* Frameworks */,
@@ -128,14 +128,14 @@
 			);
 			dependencies = (
 			);
-			name = ComeToMe;
+			name = VSS;
 			productName = ComeToMe;
-			productReference = EDF857BA2565690500A5117E /* ComeToMe.app */;
+			productReference = EDF857BA2565690500A5117E /* VSS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EDF857CF2565690600A5117E /* ComeToMeTests */ = {
+		EDF857CF2565690600A5117E /* VehicleSummonSystemTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF857DC2565690600A5117E /* Build configuration list for PBXNativeTarget "ComeToMeTests" */;
+			buildConfigurationList = EDF857DC2565690600A5117E /* Build configuration list for PBXNativeTarget "VehicleSummonSystemTests" */;
 			buildPhases = (
 				EDF857CC2565690600A5117E /* Sources */,
 				EDF857CD2565690600A5117E /* Frameworks */,
@@ -146,9 +146,9 @@
 			dependencies = (
 				EDF857D22565690600A5117E /* PBXTargetDependency */,
 			);
-			name = ComeToMeTests;
+			name = VehicleSummonSystemTests;
 			productName = ComeToMeTests;
-			productReference = EDF857D02565690600A5117E /* ComeToMeTests.xctest */;
+			productReference = EDF857D02565690600A5117E /* VehicleSummonSystemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EDF857B52565690500A5117E /* Build configuration list for PBXProject "ComeToMe" */;
+			buildConfigurationList = EDF857B52565690500A5117E /* Build configuration list for PBXProject "VehicleSummonSystem" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,8 +183,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDF857B92565690500A5117E /* ComeToMe */,
-				EDF857CF2565690600A5117E /* ComeToMeTests */,
+				EDF857B92565690500A5117E /* VSS */,
+				EDF857CF2565690600A5117E /* VehicleSummonSystemTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		EDF857D22565690600A5117E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDF857B92565690500A5117E /* ComeToMe */;
+			target = EDF857B92565690500A5117E /* VSS */;
 			targetProxy = EDF857D12565690600A5117E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -373,15 +373,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ComeToMe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VehicleSummonSystem/Preview Content\"";
 				DEVELOPMENT_TEAM = PLH8EV8LKK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ComeToMe/Info.plist;
+				INFOPLIST_FILE = VehicleSummonSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.ComeToMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.VehicleSummonSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,15 +393,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ComeToMe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VehicleSummonSystem/Preview Content\"";
 				DEVELOPMENT_TEAM = PLH8EV8LKK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ComeToMe/Info.plist;
+				INFOPLIST_FILE = VehicleSummonSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.ComeToMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.VehicleSummonSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,18 +415,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLH8EV8LKK;
-				INFOPLIST_FILE = ComeToMeTests/Info.plist;
+				INFOPLIST_FILE = VehicleSummonSystemTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.ComeToMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.VehicleSummonSystemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComeToMe.app/ComeToMe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleSummonSystem.app/VehicleSummonSystem";
 			};
 			name = Debug;
 		};
@@ -437,25 +437,25 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PLH8EV8LKK;
-				INFOPLIST_FILE = ComeToMeTests/Info.plist;
+				INFOPLIST_FILE = VehicleSummonSystemTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.ComeToMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ltu.actor.VehicleSummonSystemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComeToMe.app/ComeToMe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleSummonSystem.app/VehicleSummonSystem";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDF857B52565690500A5117E /* Build configuration list for PBXProject "ComeToMe" */ = {
+		EDF857B52565690500A5117E /* Build configuration list for PBXProject "VehicleSummonSystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF857D72565690600A5117E /* Debug */,
@@ -464,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF857D92565690600A5117E /* Build configuration list for PBXNativeTarget "ComeToMe" */ = {
+		EDF857D92565690600A5117E /* Build configuration list for PBXNativeTarget "VSS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF857DA2565690600A5117E /* Debug */,
@@ -473,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF857DC2565690600A5117E /* Build configuration list for PBXNativeTarget "ComeToMeTests" */ = {
+		EDF857DC2565690600A5117E /* Build configuration list for PBXNativeTarget "VehicleSummonSystemTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF857DD2565690600A5117E /* Debug */,

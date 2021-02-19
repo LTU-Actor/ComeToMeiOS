@@ -4,10 +4,23 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ComeToMe.xcscheme_^#shared#^_</key>
+		<key>VehicleSummonSystem.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EDF857B92565690500A5117E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDF857CF2565690600A5117E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

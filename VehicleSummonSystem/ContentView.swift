@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  ComeToMe
+//  VehicleSummonSystem
 //
 //  Created by Justin.Dombecki on 11/18/20.
 //  Copyright © 2020 Justin.Dombecki. All rights reserved.
@@ -45,7 +45,7 @@ struct ContentView: View {
                             }
                         }
                     }) {
-                        Text("Come to Me")
+                        Text("Summon Vehicle")
                     }
                     .padding()
                     .font(.title)
