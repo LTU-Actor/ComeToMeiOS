@@ -33,8 +33,6 @@ struct MapView: UIViewRepresentable {
         if (isLocationFollowingEnabled || isFirstTimeShowingMap) {
             view.centerCoordinate = locationCoordinate
             print("setting center: \(view.userLocation.coordinate)")
-        } else {
-            view.centerCoordinate = centerCoord
         }
         
     }
